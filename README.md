@@ -1,16 +1,21 @@
 # Mundial_de_futbol_en_consola
 Repositorio para realizar el taller de arreglos y matrices
 
-🫂 Integrantes:
+## 🫂 Integrantes:
 -Luis Leonardo Rodriguez
 -Jerónimo Toro 
 
-⚽ Se implementara la visualizacion de las banderas de los 4 paises del grupo inicial, parte, se diseñara un algoritmo que reciba un factor de escala para dibujar en 4 tamaños: Grande, mediano, pequeño e icono
+## ⚽ Banderas 
+Se implementara la visualizacion de las banderas de los 4 paises del grupo inicial, parte, se diseñara un algoritmo que reciba un factor de escala para dibujar en 4 tamaños: Grande, mediano, pequeño e icono
 
-📊Se construira una matriz para representar la tabla de posiciones del mundial, con su contenido editable y actualizable.
+## 📊 Posiciones de los equipos
+Se construira una matriz para representar la tabla de posiciones del mundial, con su contenido editable y actualizable.
 
-😻 Usando arreglos y matrices, se estructurara el calendario de los enfrentamientos y sus fechas de todo el mundial. El usuario podra ver todos los partidos por grupo y ver la hora de un partido especifico
+## 😻 Calendario 
+Usando arreglos y matrices, se estructurara el calendario de los enfrentamientos y sus fechas de todo el mundial. El usuario podra ver todos los partidos por grupo y ver la hora de un partido especifico
 
-🌐 Todo el salon colaborara para obtener toda la informacion necesaria para la elaboracion de este taller.
+## 🌐 Colaboracion global 
+Todo el salon colaborara para obtener toda la informacion necesaria para la elaboracion de este taller.
 
-💪 Por último, se implementara una funcionalidad que permita consultar información de un país, como su capital, jugadores principales y apariciones en copas del mundo.
+## 💪 Consultar informacion 
+Por último, se implementara una funcionalidad que permita consultar información de un país, como su capital, jugadores principales y apariciones en copas del mundo.
