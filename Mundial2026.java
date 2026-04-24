@@ -242,3 +242,37 @@ public class Mundial2026 {
             // 47 Panama
             {{"W","W","R","R","R","R"},{"W","W","R","R","R","R"},{"B","B","W","W","W","W"},{"B","B","W","W","W","W"},{"B","B","W","W","W","W"},{"B","B","W","W","W","W"}}
         };
+
+        // ===== MENU PRINCIPAL =====
+        int opcion = -1;
+
+        while (opcion != 0) {
+
+            System.out.println(CYAN +
+            "\n ███╗   ███╗██╗   ██╗███╗   ██╗██████╗ ██╗ █████╗ ██╗     " + "\n" +
+            " ████╗ ████║██║   ██║████╗  ██║██╔══██╗██║██╔══██╗██║     " + "\n" +
+            " ██╔████╔██║██║   ██║██╔██╗ ██║██║  ██║██║███████║██║     " + "\n" +
+            " ██║╚██╔╝██║██║   ██║██║╚██╗██║██║  ██║██║██╔══██║██║     " + "\n" +
+            " ██║ ╚═╝ ██║╚██████╔╝██║ ╚████║██████╔╝██║██║  ██║███████╗" + "\n" +
+            " ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚═╝╚═╝  ╚═╝╚══════╝" + RESET);
+            System.out.println(AMARILLO +
+            "  ██████╗ ██████╗  ██████╗ ██████╗ " + "\n" +
+            " ╚════██╗██╔═████╗╚════██╗██╔════╝ " + "\n" +
+            "  █████╔╝██║██╔██║ █████╔╝███████╗ " + "\n" +
+            " ██╔═══╝ ████╔╝██║██╔═══╝ ██╔═══██╗" + "\n" +
+            " ███████╗╚██████╔╝███████╗╚██████╔╝" + "\n" +
+            " ╚══════╝  ╚═════╝ ╚══════╝ ╚═════╝ " + RESET);
+
+            System.out.println(MAGENTA + "\n======= MENU PRINCIPAL =======" + RESET);
+            System.out.println(BLANCO + "1. Ver grupos");
+            System.out.println("2. Banderas");
+            System.out.println("3. Tabla de posiciones");
+            System.out.println("4. Fixture");
+            System.out.println("5. Informacion de pais");
+            System.out.println("0. Salir" + RESET);
+            System.out.print(AMARILLO + "Escoge una opcion: " + RESET);
+
+            while (!sc.hasNextInt()) { sc.next(); }
+            opcion = sc.nextInt();
+
+            switch (opcion) {
