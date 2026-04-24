@@ -600,3 +600,56 @@ public class Mundial2026 {
                         System.out.println(ROJO + "Opcion invalida." + RESET);
                     }
                     break;
+
+                // ============================================================
+                case 5: // INFORMACION DE PAIS
+                // ============================================================
+                    System.out.println(CYAN + "\n===== INFORMACION DE PAISES =====" + RESET);
+                    System.out.println("1. Ver lista de paises");
+                    System.out.println("2. Consultar un pais");
+                    System.out.print("Escoge una opcion: ");
+                    while (!sc.hasNextInt()) { sc.next(); }
+                    int opInfo = sc.nextInt();
+
+                    if (opInfo == 1) {
+                        for (int i = 0; i < infoPaises.length; i++) {
+                            System.out.println((i + 1) + ". " + infoPaises[i][0]);
+                        }
+
+                    } else if (opInfo == 2) {
+                        for (int i = 0; i < infoPaises.length; i++) {
+                            System.out.println((i + 1) + ". " + infoPaises[i][0]);
+                        }
+                        System.out.print("Escoge un pais: ");
+                        while (!sc.hasNextInt()) { sc.next(); }
+                        int pInfo = sc.nextInt() - 1;
+                        if (pInfo < 0 || pInfo >= infoPaises.length) {
+                            System.out.println(ROJO + "Pais invalido." + RESET);
+                        } else {
+                            System.out.println(AMARILLO + "\nPais    : " + infoPaises[pInfo][0] + RESET);
+                            System.out.println("Capital : " + infoPaises[pInfo][1]);
+                            System.out.println("Once base referencial:");
+                            System.out.println("  " + infoPaises[pInfo][2]);
+                        }
+
+                    } else {
+                        System.out.println(ROJO + "Opcion invalida." + RESET);
+                    }
+                    break;
+
+                // ============================================================
+                case 0: // SALIR
+                // ============================================================
+                    System.out.println(VERDE + "\nHasta la proxima. Viva el futbol!" + RESET);
+                    break;
+
+                default:
+                    System.out.println(ROJO + "Opcion invalida. Intenta de nuevo." + RESET);
+
+            } // fin switch
+
+        } // fin while principal
+
+        sc.close();
+    } // fin main
+}
