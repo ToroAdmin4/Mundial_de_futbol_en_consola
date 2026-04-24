@@ -313,3 +313,41 @@ public class Mundial2026 {
                     if (tam == 2) { filas = 6;  cols = 18; }
                     if (tam == 3) { filas = 9;  cols = 27; }
                     if (tam == 4) { filas = 12; cols = 36; }
+
+                    if (opBandera == 1) {
+                        // Pedir grupo y pais
+                        for (int i = 0; i < grupos.length; i++) {
+                            System.out.println((i + 1) + ". Grupo " + grupos[i]);
+                        }
+                        System.out.print("Escoge el grupo: ");
+                        while (!sc.hasNextInt()) { sc.next(); }
+                        int gB = sc.nextInt() - 1;
+
+                        if (gB < 0 || gB >= grupos.length) {
+                            System.out.println(ROJO + "Grupo invalido." + RESET);
+                            break;
+                        }
+                        System.out.println("\nEscoge el pais del Grupo " + grupos[gB] + ":");
+                        for (int i = 0; i < paisesPorGrupo[gB].length; i++) {
+                            System.out.println((i + 1) + ". " + paisesPorGrupo[gB][i]);
+                        }
+                        System.out.print("Tu opcion: ");
+                        while (!sc.hasNextInt()) { sc.next(); }
+                        int pB = sc.nextInt() - 1;
+
+                        if (pB < 0 || pB >= paisesPorGrupo[gB].length) {
+                            System.out.println(ROJO + "Pais invalido." + RESET);
+                            break;
+                        }
+
+                        // Buscar indice global del pais
+                        String nombrePais = paisesPorGrupo[gB][pB];
+                        int idxBandera = -1;
+                        for (int i = 0; i < equipos.length; i++) {
+                            if (equipos[i].equals(nombrePais)) { idxBandera = i; break; }
+                        }
+
+                        if (idxBandera == -1) {
+                            System.out.println(ROJO + "Bandera no encontrada." + RESET);
+                            break;
+                        }
