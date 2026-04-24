@@ -43,4 +43,101 @@ public class Mundial2026 {
             {"Inglaterra","Croacia","Ghana","Panama"}
         };
 
-  
+        // ===== EQUIPOS (para tabla) =====
+        String[] equipos = {
+            "Mexico","Sudafrica","Corea","Chequia",
+            "Canada","Bosnia","Qatar","Suiza",
+            "Brasil","Marruecos","Haiti","Escocia",
+            "EEUU","Paraguay","Australia","Turquia",
+            "Alemania","Curazao","Costa de Marfil","Ecuador",
+            "Paises Bajos","Japon","Suecia","Tunez",
+            "Belgica","Egipto","Iran","Nueva Zelanda",
+            "Espana","Cabo Verde","Arabia Saudita","Uruguay",
+            "Francia","Senegal","Irak","Noruega",
+            "Argentina","Argelia","Austria","Jordania",
+            "Portugal","RD Congo","Uzbekistan","Colombia",
+            "Inglaterra","Croacia","Ghana","Panama"
+        };
+
+        // PJ, PG, PE, PP, GF, GC, DG, TA, TR, PTS
+        int[][] tabla = new int[48][10];
+
+        // ===== FIXTURE (Fecha 1) =====
+        String[][] fixture = {
+            {"Grupo A","Mexico vs Sudafrica","20 de Junio","14:00","Inter Miami Stadium"},
+            {"Grupo A","Corea vs Chequia","20 de Junio","18:00","Inter Miami Stadium"},
+            {"Grupo B","Canada vs Bosnia","21 de Junio","14:00","Toronto Stadium"},
+            {"Grupo B","Qatar vs Suiza","21 de Junio","18:00","Toronto Stadium"},
+            {"Grupo C","Brasil vs Marruecos","22 de Junio","14:00","Maracana Stadium"},
+            {"Grupo C","Haiti vs Escocia","22 de Junio","18:00","Maracana Stadium"},
+            {"Grupo D","EEUU vs Paraguay","23 de Junio","14:00","Dallas Stadium"},
+            {"Grupo D","Australia vs Turquia","23 de Junio","18:00","Dallas Stadium"},
+            {"Grupo E","Alemania vs Curazao","24 de Junio","14:00","Berlin Stadium"},
+            {"Grupo E","Costa de Marfil vs Ecuador","24 de Junio","18:00","Berlin Stadium"},
+            {"Grupo F","Paises Bajos vs Japon","25 de Junio","14:00","Amsterdam Stadium"},
+            {"Grupo F","Suecia vs Tunez","25 de Junio","18:00","Amsterdam Stadium"},
+            {"Grupo G","Belgica vs Egipto","26 de Junio","14:00","Brussels Arena"},
+            {"Grupo G","Iran vs Nueva Zelanda","26 de Junio","18:00","Brussels Arena"},
+            {"Grupo H","Espana vs Cabo Verde","27 de Junio","14:00","Madrid Stadium"},
+            {"Grupo H","Arabia Saudita vs Uruguay","27 de Junio","18:00","Madrid Stadium"},
+            {"Grupo I","Francia vs Senegal","28 de Junio","14:00","Paris Stadium"},
+            {"Grupo I","Irak vs Noruega","28 de Junio","18:00","Paris Stadium"},
+            {"Grupo J","Argentina vs Argelia","29 de Junio","14:00","Monumental Stadium"},
+            {"Grupo J","Austria vs Jordania","29 de Junio","18:00","Monumental Stadium"},
+            {"Grupo K","Portugal vs RD Congo","30 de Junio","14:00","Lisbon Stadium"},
+            {"Grupo K","Uzbekistan vs Colombia","30 de Junio","18:00","Lisbon Stadium"},
+            {"Grupo L","Inglaterra vs Croacia","1 de Julio","14:00","Wembley Stadium"},
+            {"Grupo L","Ghana vs Panama","1 de Julio","18:00","Wembley Stadium"}
+        };
+
+        // ===== INFO PAISES =====
+        String[][] infoPaises = {
+            {"Mexico","Ciudad de Mexico","Malagon, Sanchez, Montes, Vasquez, Gallardo, Edson Alvarez, Chavez, Antuna, Orbelin, Lozano, Gimenez"},
+            {"Sudafrica","Pretoria","Williams, Mudau, Kekana, Mvala, Modiba, Sithole, Mokoena, Tau, Zwane, Appollis, Foster"},
+            {"Corea","Seul","Kim Seung-gyu, Seol, Kim Min-jae, Kim Young-gwon, Lee Ki-je, Hwang In-beom, Park Yong-woo, Lee Kang-in, Son, Hwang Hee-chan, Cho Gue-sung"},
+            {"Chequia","Praga","Stanek, Coufal, Krejci, Holes, Zeleny, Soucek, Kral, Cerny, Barak, Provod, Schick"},
+            {"Canada","Ottawa","Crepeau, Johnston, Bombito, Cornelius, Davies, Eustaquio, Kone, Buchanan, David, Larin, Hoilett"},
+            {"Bosnia","Sarajevo","Sehic, Dedic, Ahmedhodzic, Bicakcic, Kolasinac, Pjanic, Krunic, Stevanovic, Demirovic, Dzeko, Hajradinovic"},
+            {"Qatar","Doha","Barsham, Miguel, Salman, Khoukhi, Hassan, Hatem, Madibo, Afif, Al-Haydos, Almoez, Ali Assad"},
+            {"Suiza","Berna","Sommer, Widmer, Akanji, Schar, Rodriguez, Freuler, Xhaka, Aebischer, Vargas, Embolo, Okafor"},
+            {"Brasil","Brasilia","Alisson, Danilo, Marquinhos, Gabriel Magalhaes, Arana, Bruno Guimaraes, Casemiro, Rodrygo, Paqueta, Vinicius, Richarlison"},
+            {"Marruecos","Rabat","Bono, Hakimi, Aguerd, Saiss, Mazraoui, Amrabat, Ounahi, Ziyech, Harit, Boufal, En-Nesyri"},
+            {"Haiti","Puerto Principe","Placide, Arcus, Ade, Duverne, Christian, Leverton Pierre, Etienne, Nazon, Deedson, Pierrot, Mondesir"},
+            {"Escocia","Edimburgo","Gunn, Hendry, Porteous, Tierney, Robertson, McGregor, McGinn, Gilmour, McTominay, Christie, Adams"},
+            {"EEUU","Washington D.C.","Turner, Dest, Richards, Ream, Robinson, Adams, McKennie, Musah, Weah, Pulisic, Balogun"},
+            {"Paraguay","Asuncion","Coronel, Rojas, Balbuena, Alderete, Alonso, Cubas, Villasanti, Gomez, Almiron, Enciso, Sanabria"},
+            {"Australia","Canberra","Ryan, Atkinson, Souttar, Burgess, Bos, Irvine, Baccus, McGree, Boyle, Goodwin, Duke"},
+            {"Turquia","Ankara","Cakir, Celik, Demiral, Bardakci, Kadioglu, Yokuslu, Calhanoglu, Guler, Kokcu, Akturkoglu, Yilmaz"},
+            {"Alemania","Berlin","Neuer, Kimmich, Rudiger, Tah, Mittelstadt, Andrich, Kroos, Musiala, Gundogan, Sane, Havertz"},
+            {"Curazao","Willemstad","Room, Martina, Kongolo, Rosier, Kuwas, Bacuna, Anita, Antonisse, Elson Hooi, Janga, Kastaneer"},
+            {"Costa de Marfil","Yamusukro","Fofana, Singo, Ndicka, Diomande, Konan, Kessie, Sangare, Adingra, Pepe, Boga, Haller"},
+            {"Ecuador","Quito","Galindez, Preciado, Torres, Hincapie, Estupinan, Moises Caicedo, Gruezo, Sarmiento, Kendry Paez, Plata, Enner Valencia"},
+            {"Paises Bajos","Amsterdam","Verbruggen, Dumfries, De Vrij, Van Dijk, Ake, De Jong, Reijnders, Simons, Malen, Gakpo, Depay"},
+            {"Japon","Tokio","Suzuki, Sugawara, Tomiyasu, Itakura, Ito, Endo, Morita, Kubo, Kamada, Mitoma, Ueda"},
+            {"Suecia","Estocolmo","Olsen, Lustig, Lindelof, Hien, Gudmundsson, Cajuste, Ekdal, Forsberg, Kulusevski, Isak, Elanga"},
+            {"Tunez","Tunez","Dahmen, Drager, Talbi, Meriah, Abdi, Laidouni, Skhiri, Achouri, Ben Slimane, Sliti, Jaziri"},
+            {"Belgica","Bruselas","Casteels, Castagne, Faes, Vertonghen, Theate, Onana, Tielemans, De Bruyne, Doku, Lukaku, Trossard"},
+            {"Egipto","El Cairo","El Shenawy, Hany, Abdelmonem, Hegazi, Hamdi, Elneny, Hamdy Fathy, Trezeguet, Zizo, Salah, Mostafa Mohamed"},
+            {"Iran","Teheran","Beiranvand, Moharrami, Hosseini, Kanaani, Rezaeian, Ezatolahi, Ghoddos, Gholizadeh, Jahanbakhsh, Taremi, Azmoun"},
+            {"Nueva Zelanda","Wellington","Crocombe, Payne, Boxall, Pijnaker, Cacace, Bell, Garbett, Stamenic, Singh, Greive, Chris Wood"},
+            {"Espana","Madrid","Simon, Carvajal, Laporte, Le Normand, Cucurella, Rodri, Fabian, Pedri, Yamal, Morata, Nico Williams"},
+            {"Cabo Verde","Praia","Vozinha, Tavares, Stopira, Roberto Lopes, Joao Paulo, Andrade, Monteiro, Bebe, Ryan Mendes, Jovane, Diney"},
+            {"Arabia Saudita","Riad","Al-Owais, Abdulhamid, Al-Amri, Lajami, Al-Shahrani, Kanno, Al-Malki, Al-Dawsari, Al-Buraikan, Al-Obud, Al-Shehri"},
+            {"Uruguay","Montevideo","Rochet, Nandez, Araujo, Gimenez, Olivera, Ugarte, Valverde, Bentancur, Pellistri, Nunez, De la Cruz"},
+            {"Francia","Paris","Maignan, Kounde, Upamecano, Saliba, Theo Hernandez, Tchouameni, Camavinga, Dembele, Griezmann, Mbappe, Thuram"},
+            {"Senegal","Dakar","Mendy, Sabaly, Koulibaly, Niakhate, Jakobs, Gueye, Pape Matar Sarr, Camara, Sarr, Ismaila Sarr, Mane"},
+            {"Irak","Bagdad","Hassan, Adnan, Al-Hamadi, Ali Faez, Muhanad, Rashid, Iqbal, Ali Jasim, Hameed, Bayesh, Aymen Hussein"},
+            {"Noruega","Oslo","Nyland, Ryerson, Ajer, Ostigard, Meling, Berge, Odegaard, Aursnes, Bobb, Sorloth, Haaland"},
+            {"Argentina","Buenos Aires","Martinez, Molina, Romero, Otamendi, Tagliafico, De Paul, Enzo, Mac Allister, Messi, Alvarez, Di Maria"},
+            {"Argelia","Argel","Mandrea, Atal, Mandi, Bensebaini, Tougai, Bennacer, Zerrouki, Mahrez, Belaili, Gouiri, Slimani"},
+            {"Austria","Viena","Schlager, Posch, Danso, Lienhart, Mwene, Laimer, Seiwald, Sabitzer, Baumgartner, Wimmer, Arnautovic"},
+            {"Jordania","Amman","Abu Laila, Naser, Al-Arab, Abu Hashish, Haddad, Al-Rashdan, Rawashdeh, Al-Tamari, Olwan, Abu Zraiq, Naimat"},
+            {"Portugal","Lisboa","Diogo Costa, Cancelo, Dias, Pepe, Mendes, Palhinha, Bruno Fernandes, Vitinha, Bernardo Silva, Leao, Cristiano Ronaldo"},
+            {"RD Congo","Kinsasa","Mpasi, Kalulu, Mbemba, Inonga, Masuaku, Moutoussamy, Pickel, Kakuta, Bongonda, Wissa, Bakambu"},
+            {"Uzbekistan","Taskent","Yusupov, Sayfiev, Ashurmatov, Alikulov, Nasrullaev, Hamraliev, Shukurov, Masharipov, Fayzullaev, Urunov, Shomurodov"},
+            {"Colombia","Bogota","Camilo Vargas, Munoz, Davinson, Lucumi, Mojica, Lerma, Richard Rios, James, Arias, Luis Diaz, Cordoba"},
+            {"Inglaterra","Londres","Pickford, Walker, Stones, Guehi, Shaw, Rice, Bellingham, Foden, Saka, Kane, Gordon"},
+            {"Croacia","Zagreb","Livakovic, Stanisic, Sutalo, Gvardiol, Sosa, Modric, Kovacic, Brozovic, Majer, Pasalic, Kramaric"},
+            {"Ghana","Acra","Ati-Zigi, Odoi, Djiku, Amartey, Mensah, Partey, Kudus, Salis, Paintsil, Semenyo, Inaki Williams"},
+            {"Panama","Ciudad de Panama","Mosquera, Murillo, Escobar, Cordoba, Davis, Carrasquilla, Godoy, Martinez, Barcenas, Fajardo, Ismael Diaz"}
+        };
