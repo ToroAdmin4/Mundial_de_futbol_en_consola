@@ -351,3 +351,115 @@ public class Mundial2026 {
                             System.out.println(ROJO + "Bandera no encontrada." + RESET);
                             break;
                         }
+
+                        // Imprimir bandera escalada
+                        System.out.println(AMARILLO + "\nBandera de: " + nombrePais + RESET);
+                        String[][] base = banderas[idxBandera];
+                        int baseF = base.length;
+                        int baseC = base[0].length;
+
+                        for (int i = 0; i < filas; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                int fi = (i * baseF) / filas;
+                                int ci = (j * baseC) / cols;
+                                String ch = base[fi][ci];
+                                String color = RESET;
+                                if (ch.equals("K")) color = BG_BLACK;
+                                else if (ch.equals("R")) color = BG_RED;
+                                else if (ch.equals("G")) color = BG_GREEN;
+                                else if (ch.equals("Y")) color = BG_YELLOW;
+                                else if (ch.equals("B")) color = BG_BLUE;
+                                else if (ch.equals("W")) color = BG_WHITE;
+                                else if (ch.equals("C")) color = BG_CYAN;
+                                else if (ch.equals("M")) color = BG_MAGENTA;
+                                System.out.print(color + "  " + RESET);
+                            }
+                            System.out.println();
+                        }
+
+                    } else if (opBandera == 2) {
+                        // Ver grupo completo
+                        for (int i = 0; i < grupos.length; i++) {
+                            System.out.println((i + 1) + ". Grupo " + grupos[i]);
+                        }
+                        System.out.print("Escoge el grupo: ");
+                        while (!sc.hasNextInt()) { sc.next(); }
+                        int gGrupo = sc.nextInt() - 1;
+
+                        if (gGrupo < 0 || gGrupo >= grupos.length) {
+                            System.out.println(ROJO + "Grupo invalido." + RESET);
+                            break;
+                        }
+
+                        System.out.println(VERDE + "\n===== GRUPO " + grupos[gGrupo] + " =====" + RESET);
+                        for (int p = 0; p < paisesPorGrupo[gGrupo].length; p++) {
+                            String nombreP = paisesPorGrupo[gGrupo][p];
+                            int idxG = -1;
+                            for (int i = 0; i < equipos.length; i++) {
+                                if (equipos[i].equals(nombreP)) { idxG = i; break; }
+                            }
+                            if (idxG == -1) continue;
+
+                            System.out.println(AMARILLO + "\nBandera de: " + nombreP + RESET);
+                            String[][] base = banderas[idxG];
+                            int baseF = base.length;
+                            int baseC = base[0].length;
+                            for (int i = 0; i < filas; i++) {
+                                for (int j = 0; j < cols; j++) {
+                                    int fi = (i * baseF) / filas;
+                                    int ci = (j * baseC) / cols;
+                                    String ch = base[fi][ci];
+                                    String color = RESET;
+                                    if (ch.equals("K")) color = BG_BLACK;
+                                    else if (ch.equals("R")) color = BG_RED;
+                                    else if (ch.equals("G")) color = BG_GREEN;
+                                    else if (ch.equals("Y")) color = BG_YELLOW;
+                                    else if (ch.equals("B")) color = BG_BLUE;
+                                    else if (ch.equals("W")) color = BG_WHITE;
+                                    else if (ch.equals("C")) color = BG_CYAN;
+                                    else if (ch.equals("M")) color = BG_MAGENTA;
+                                    System.out.print(color + "  " + RESET);
+                                }
+                                System.out.println();
+                            }
+                        }
+
+                    } else if (opBandera == 3) {
+                        // Ver todas
+                        for (int g = 0; g < grupos.length; g++) {
+                            System.out.println(VERDE + "\n===== GRUPO " + grupos[g] + " =====" + RESET);
+                            for (int p = 0; p < paisesPorGrupo[g].length; p++) {
+                                String nombreP = paisesPorGrupo[g][p];
+                                int idxT = -1;
+                                for (int i = 0; i < equipos.length; i++) {
+                                    if (equipos[i].equals(nombreP)) { idxT = i; break; }
+                                }
+                                if (idxT == -1) continue;
+                                System.out.println(AMARILLO + "\nBandera de: " + nombreP + RESET);
+                                String[][] base = banderas[idxT];
+                                int baseF = base.length;
+                                int baseC = base[0].length;
+                                for (int i = 0; i < filas; i++) {
+                                    for (int j = 0; j < cols; j++) {
+                                        int fi = (i * baseF) / filas;
+                                        int ci = (j * baseC) / cols;
+                                        String ch = base[fi][ci];
+                                        String color = RESET;
+                                        if (ch.equals("K")) color = BG_BLACK;
+                                        else if (ch.equals("R")) color = BG_RED;
+                                        else if (ch.equals("G")) color = BG_GREEN;
+                                        else if (ch.equals("Y")) color = BG_YELLOW;
+                                        else if (ch.equals("B")) color = BG_BLUE;
+                                        else if (ch.equals("W")) color = BG_WHITE;
+                                        else if (ch.equals("C")) color = BG_CYAN;
+                                        else if (ch.equals("M")) color = BG_MAGENTA;
+                                        System.out.print(color + "  " + RESET);
+                                    }
+                                    System.out.println();
+                                }
+                            }
+                        }
+                    } else {
+                        System.out.println(ROJO + "Opcion invalida." + RESET);
+                    }
+                    break;
