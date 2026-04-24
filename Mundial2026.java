@@ -463,3 +463,140 @@ public class Mundial2026 {
                         System.out.println(ROJO + "Opcion invalida." + RESET);
                     }
                     break;
+
+                // ============================================================
+                case 3: // TABLA DE POSICIONES
+                // ============================================================
+                    int opTabla = -1;
+                    while (opTabla != 0) {
+                        System.out.println(CYAN + "\n===== TABLA DE POSICIONES =====" + RESET);
+                        System.out.println("1. Ver tabla");
+                        System.out.println("2. Editar equipo");
+                        System.out.println("0. Volver");
+                        System.out.print("Escoge una opcion: ");
+                        while (!sc.hasNextInt()) { sc.next(); }
+                        opTabla = sc.nextInt();
+
+                        if (opTabla == 1 || opTabla == 2) {
+
+                            if (opTabla == 2) {
+                                // EDITAR
+                                System.out.println("\nEscoge el equipo a editar:");
+                                for (int i = 0; i < equipos.length; i++) {
+                                    System.out.println((i + 1) + ". " + equipos[i]);
+                                }
+                                System.out.print("Tu opcion: ");
+                                while (!sc.hasNextInt()) { sc.next(); }
+                                int eIdx = sc.nextInt() - 1;
+
+                                if (eIdx < 0 || eIdx >= equipos.length) {
+                                    System.out.println(ROJO + "Equipo invalido." + RESET);
+                                } else {
+                                    System.out.println(AMARILLO + "Editando: " + equipos[eIdx] + RESET);
+                                    System.out.print("PJ: ");  while (!sc.hasNextInt()) { sc.next(); } tabla[eIdx][0] = sc.nextInt();
+                                    System.out.print("PG: ");  while (!sc.hasNextInt()) { sc.next(); } tabla[eIdx][1] = sc.nextInt();
+                                    System.out.print("PE: ");  while (!sc.hasNextInt()) { sc.next(); } tabla[eIdx][2] = sc.nextInt();
+                                    System.out.print("PP: ");  while (!sc.hasNextInt()) { sc.next(); } tabla[eIdx][3] = sc.nextInt();
+                                    System.out.print("GF: ");  while (!sc.hasNextInt()) { sc.next(); } tabla[eIdx][4] = sc.nextInt();
+                                    System.out.print("GC: ");  while (!sc.hasNextInt()) { sc.next(); } tabla[eIdx][5] = sc.nextInt();
+                                    tabla[eIdx][6] = tabla[eIdx][4] - tabla[eIdx][5];
+                                    System.out.print("TA: ");  while (!sc.hasNextInt()) { sc.next(); } tabla[eIdx][7] = sc.nextInt();
+                                    System.out.print("TR: ");  while (!sc.hasNextInt()) { sc.next(); } tabla[eIdx][8] = sc.nextInt();
+                                    System.out.print("PTS: "); while (!sc.hasNextInt()) { sc.next(); } tabla[eIdx][9] = sc.nextInt();
+                                    System.out.println(VERDE + "Equipo actualizado." + RESET);
+                                }
+                            }
+
+                            // ORDENAR (burbuja)
+                            for (int i = 0; i < equipos.length - 1; i++) {
+                                for (int j = i + 1; j < equipos.length; j++) {
+                                    if (tabla[j][9] > tabla[i][9] ||
+                                        (tabla[j][9] == tabla[i][9] && tabla[j][6] > tabla[i][6])) {
+                                        int[] tmpFila = tabla[i]; tabla[i] = tabla[j]; tabla[j] = tmpFila;
+                                        String tmpEq = equipos[i]; equipos[i] = equipos[j]; equipos[j] = tmpEq;
+                                    }
+                                }
+                            }
+
+                            // IMPRIMIR
+                            System.out.println(VERDE + "\nPos Equipo              PJ PG PE PP GF GC DG TA TR PTS" + RESET);
+                            for (int i = 0; i < equipos.length; i++) {
+                                System.out.printf("%-3d %-18s %2d %2d %2d %2d %2d %2d %2d %2d %2d %3d%n",
+                                    (i + 1), equipos[i],
+                                    tabla[i][0], tabla[i][1], tabla[i][2], tabla[i][3],
+                                    tabla[i][4], tabla[i][5], tabla[i][6], tabla[i][7],
+                                    tabla[i][8], tabla[i][9]);
+                            }
+
+                        } else if (opTabla != 0) {
+                            System.out.println(ROJO + "Opcion invalida." + RESET);
+                        }
+                    }
+                    break;
+
+                // ============================================================
+                case 4: // FIXTURE
+                // ============================================================
+                    System.out.println(CYAN + "\n===== FIXTURE - FECHA 1 =====" + RESET);
+                    System.out.println("1. Ver todos");
+                    System.out.println("2. Ver por grupo");
+                    System.out.println("3. Ver partido especifico");
+                    System.out.print("Escoge una opcion: ");
+                    while (!sc.hasNextInt()) { sc.next(); }
+                    int opFix = sc.nextInt();
+
+                    if (opFix == 1) {
+                        System.out.println(AMARILLO + "\n--- TODOS LOS PARTIDOS ---" + RESET);
+                        for (int i = 0; i < fixture.length; i++) {
+                            System.out.println(
+                                AZUL + "[" + fixture[i][0] + "] " + RESET +
+                                BLANCO + fixture[i][1] + RESET +
+                                " | " + fixture[i][2] + " " + fixture[i][3] +
+                                " | " + fixture[i][4]);
+                        }
+
+                    } else if (opFix == 2) {
+                        for (int i = 0; i < grupos.length; i++) {
+                            System.out.println((i + 1) + ". Grupo " + grupos[i]);
+                        }
+                        System.out.print("Escoge grupo: ");
+                        while (!sc.hasNextInt()) { sc.next(); }
+                        int gFix = sc.nextInt() - 1;
+                        if (gFix < 0 || gFix >= grupos.length) {
+                            System.out.println(ROJO + "Grupo invalido." + RESET);
+                            break;
+                        }
+                        String buscarGrupo = "Grupo " + grupos[gFix];
+                        System.out.println(AMARILLO + "\n--- Partidos del " + buscarGrupo + " ---" + RESET);
+                        for (int i = 0; i < fixture.length; i++) {
+                            if (fixture[i][0].equals(buscarGrupo)) {
+                                System.out.println(
+                                    BLANCO + fixture[i][1] + RESET +
+                                    " | " + fixture[i][2] + " " + fixture[i][3] +
+                                    " | " + fixture[i][4]);
+                            }
+                        }
+
+                    } else if (opFix == 3) {
+                        for (int i = 0; i < fixture.length; i++) {
+                            System.out.println((i + 1) + ". " + fixture[i][1]);
+                        }
+                        System.out.print("Escoge partido: ");
+                        while (!sc.hasNextInt()) { sc.next(); }
+                        int pFix = sc.nextInt() - 1;
+                        if (pFix < 0 || pFix >= fixture.length) {
+                            System.out.println(ROJO + "Partido invalido." + RESET);
+                            break;
+                        }
+                        System.out.println(AMARILLO + "\n--- Detalle del partido ---" + RESET);
+                        System.out.println("Grupo   : " + fixture[pFix][0]);
+                        System.out.println("Partido : " + fixture[pFix][1]);
+                        System.out.println("Dia     : " + fixture[pFix][2]);
+                        System.out.println("Fecha   : Fecha 1");
+                        System.out.println("Hora    : " + fixture[pFix][3]);
+                        System.out.println("Estadio : " + fixture[pFix][4]);
+
+                    } else {
+                        System.out.println(ROJO + "Opcion invalida." + RESET);
+                    }
+                    break;
