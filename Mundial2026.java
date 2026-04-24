@@ -276,3 +276,40 @@ public class Mundial2026 {
             opcion = sc.nextInt();
 
             switch (opcion) {
+
+                // ============================================================
+                case 1: // VER GRUPOS
+                // ============================================================
+                    System.out.println(AZUL + "\n===== GRUPOS DEL MUNDIAL =====" + RESET);
+                    for (int i = 0; i < grupos.length; i++) {
+                        System.out.println(AMARILLO + "\nGRUPO " + grupos[i] + RESET);
+                        for (int j = 0; j < paisesPorGrupo[i].length; j++) {
+                            System.out.println("  " + (j + 1) + ". " + paisesPorGrupo[i][j]);
+                        }
+                    }
+                    break;
+
+                // ============================================================
+                case 2: // BANDERAS
+                // ============================================================
+                    System.out.println(CYAN + "\n===== MENU BANDERAS =====" + RESET);
+                    System.out.println("1. Ver una bandera");
+                    System.out.println("2. Ver banderas de un grupo");
+                    System.out.println("3. Ver todas las banderas");
+                    System.out.print("Escoge una opcion: ");
+                    while (!sc.hasNextInt()) { sc.next(); }
+                    int opBandera = sc.nextInt();
+
+                    System.out.println("\nEscoge el tamano:");
+                    System.out.println("1. Icono  (3x9)");
+                    System.out.println("2. Pequeno (6x18)");
+                    System.out.println("3. Mediano (9x27)");
+                    System.out.println("4. Grande  (12x36)");
+                    System.out.print("Tu opcion: ");
+                    while (!sc.hasNextInt()) { sc.next(); }
+                    int tam = sc.nextInt();
+
+                    int filas = 3, cols = 9;
+                    if (tam == 2) { filas = 6;  cols = 18; }
+                    if (tam == 3) { filas = 9;  cols = 27; }
+                    if (tam == 4) { filas = 12; cols = 36; }
